@@ -10,13 +10,26 @@ import SwiftUI
 
 
 struct Provider: TimelineProvider {
+    func getAPIKey() -> String? {
+        if let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") {
+            if let plistContent = NSDictionary(contentsOfFile: path) as? [String: Any] {
+                return plistContent["API_KEY"] as? String
+            }
+        }
+        return nil
+    }
+    
     func refreshToken(completion: @escaping (Result<String, Error>) -> Void) {
-        let url = URL(string: "https://securetoken.googleapis.com/v1/token?key=AIzaSyCtzcuoGrYQfj-PaXGLNTD22Ro0JecPLl4")!
+        guard let apiKey = getAPIKey() else {
+            completion(.failure(NSError(domain: "NoApiKey", code: -4)))
+            return
+        }
+        
+        let url = URL(string: "https://securetoken.googleapis.com/v1/token?key=\(apiKey)")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
-        
         let userDefaults = UserDefaults.init(suiteName: "group.app.getbaseline.baseline")!
         guard let refreshToken = userDefaults.string(forKey: "refreshToken") else {
             completion(.failure(NSError(domain: "NoData", code: -3)))
