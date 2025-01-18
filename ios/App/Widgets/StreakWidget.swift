@@ -19,7 +19,7 @@ struct Provider: TimelineProvider {
         return nil
     }
     
-    func refreshToken(completion: @escaping (Result<String, Error>) -> Void) {
+    func getRefreshToken(completion: @escaping (Result<String, Error>) -> Void) {
         guard let apiKey = getAPIKey() else {
             completion(.failure(NSError(domain: "NoApiKey", code: -4)))
             return
@@ -60,25 +60,29 @@ struct Provider: TimelineProvider {
         task.resume()
     }
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    func placeholder(in context: Context) -> Entry {
+        Entry(date: Date(), streak: 25, danger: false, error: false)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
+    func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
+        if context.isPreview {
+            completion(placeholder(in: context))
+        } else {
+            // TODO: fetch data
+            completion(placeholder(in: context))
+        }
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        var entries: [Entry] = []
         let currentDate = Date()
         let entryDate = Calendar.current.date(byAdding: .hour, value: 0, to: currentDate)!
-        let entry = SimpleEntry(date: entryDate, emoji: "😀")
+        let entry = Entry(date: entryDate, streak: 0, danger: false, error: true)
         entries.append(entry)
         
         let timeline = Timeline(entries: entries, policy: .atEnd)
         
-        refreshToken { result in
+        getRefreshToken { result in
             switch result {
             case .success(let response):
                 print("Success: \(response)")
@@ -91,9 +95,11 @@ struct Provider: TimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct Entry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let streak: Int
+    let danger: Bool
+    let error: Bool
 }
 
 struct StreakWidgetEntryView : View {
@@ -133,7 +139,7 @@ struct StreakWidget: Widget {
 #Preview(as: .systemSmall) {
     StreakWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    Entry(date: .now, emoji: "😀")
+    Entry(date: .now, emoji: "🤩")
 }
 
