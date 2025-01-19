@@ -112,7 +112,6 @@ const Summary = () => {
             }
 
             console.log("Updating...");
-            WidgetsBridgePlugin.reloadAllTimelines();
             window.location.hash = "#update";
             let newData = (await get(query(ref(db, `/${user.uid}/logs`), orderByKey(), startAfter(String(lastUpdated))))).val();
 
