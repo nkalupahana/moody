@@ -22,7 +22,6 @@ import { FirebaseMessaging } from "@capacitor-firebase/messaging";
 import StreakDialog from "../components/Streaks/StreakDialog";
 import { calculateStreak } from "../components/Streaks/helpers";
 import * as Sentry from "@sentry/react";
-import { WidgetsBridgePlugin } from "capacitor-widgetsbridge-plugin";
 
 // Add timestamp to data object, and decrypt as needed
 const processNewData = (newData, keys) => {
