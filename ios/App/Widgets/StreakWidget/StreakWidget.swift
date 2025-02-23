@@ -202,12 +202,11 @@ struct StreakWidgetEntryView: View {
                 Text("Streak:")
                 Text("\(entry.streak) (\(entry.entriesToday)) (\(entry.danger))")
             case .accessoryCircular:
-                Gauge(value: 1 - (Double(entry.danger.rawValue) / 3)) {
-                    Text("\(entry.streak)")
-                }
-                .gaugeStyle(.accessoryCircularCapacity)
+                StreakCircularAccessory(entry: entry)
+            case .accessoryInline:
+                StreakInlineAccessory(entry: entry)
             default:
-                Text("oops")
+                Text("ERROR")
             }
         }.containerBackground(.fill.tertiary, for: .widget)
     }
@@ -222,7 +221,7 @@ struct StreakWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryInline])
     }
 }
 
@@ -230,10 +229,4 @@ struct StreakWidget: Widget {
     StreakWidget()
 } timeline: {
     Entry(date: Date(), streak: 25, danger: .noRecovery, error: false, entriesToday: 1)
-}
-
-#Preview(as: .accessoryCircular) {
-    StreakWidget()
-} timeline: {
-    Entry(date: Date(), streak: 25, danger: .journaledYesterday, error: false, entriesToday: 1)
 }
