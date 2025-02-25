@@ -1,19 +1,12 @@
 //
 //  StreakAccessoryViews.swift
-//  App
+//  StreakWidget
 //
 //  Created by Nisala on 1/24/25.
 //
 
 import SwiftUI
 import WidgetKit
-
-let dangerMapping: [Danger: (icon: String, count: Int)] = [
-        .journaledToday: ("flame.fill", 1),
-        .journaledYesterday: ("pencil.tip.crop.circle.fill", 1),
-        .noRecovery: ("pencil.tip.crop.circle.fill", 1),
-        .journaledTwoDaysAgo: ("exclamationmark.triangle.fill", 2)
-    ]
 
 struct StreakCircularAccessory: View {
     var entry: Entry

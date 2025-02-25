@@ -37,6 +37,13 @@ struct Entry: TimelineEntry {
     }
 }
 
+let dangerMapping: [Danger: (icon: String, count: Int)] = [
+        .journaledToday: ("flame.fill", 1),
+        .journaledYesterday: ("pencil.tip.crop.circle.fill", 1),
+        .noRecovery: ("pencil.tip.crop.circle.fill", 1),
+        .journaledTwoDaysAgo: ("exclamationmark.triangle.fill", 2)
+    ]
+
 struct Provider: TimelineProvider {
     let userDefaults = UserDefaults.init(suiteName: "group.app.getbaseline.baseline")!
 
@@ -219,9 +226,9 @@ struct StreakWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             StreakWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryInline])
+        .configurationDisplayName("Daily Streak")
+        .description("This widget shows your journaling streak on baseline!")
+        .supportedFamilies([.accessoryCircular, .accessoryInline])
     }
 }
 
