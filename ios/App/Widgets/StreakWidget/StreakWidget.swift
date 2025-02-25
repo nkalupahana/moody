@@ -221,7 +221,7 @@ struct StreakWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryInline])
+        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryInline])
     }
 }
 
