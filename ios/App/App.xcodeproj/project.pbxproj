@@ -26,7 +26,6 @@
 		F4E7D2102D39E92800BED379 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E7D20F2D39E92800BED379 /* WidgetKit.framework */; };
 		F4E7D2122D39E92800BED379 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E7D2112D39E92800BED379 /* SwiftUI.framework */; };
 		F4E7D21D2D39E92B00BED379 /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F4E7D20E2D39E92800BED379 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F4E7D22A2D39EA4B00BED379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E7D2252D39EA4B00BED379 /* Assets.xcassets */; };
 		F4E7D22D2D39EA4B00BED379 /* WidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E7D2282D39EA4B00BED379 /* WidgetsBundle.swift */; };
 		F4E7D22F2D3A0AB300BED379 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F43DAABF27C57A7C00566D61 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 		F4E7D20E2D39E92800BED379 /* WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E7D20F2D39E92800BED379 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F4E7D2112D39E92800BED379 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F4E7D2252D39EA4B00BED379 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E7D2262D39EA4B00BED379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4E7D2282D39EA4B00BED379 /* WidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsBundle.swift; sourceTree = "<group>"; };
 		F4E7D22E2D39EE7200BED379 /* WidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetsExtension.entitlements; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			children = (
 				F43FC5BB2D6E992D00F0DD00 /* LatoBold.ttf */,
 				F4D9AB762D6D68C900330C04 /* StreakWidget */,
-				F4E7D2252D39EA4B00BED379 /* Assets.xcassets */,
 				F4E7D2262D39EA4B00BED379 /* Info.plist */,
 				F4E7D2282D39EA4B00BED379 /* WidgetsBundle.swift */,
 			);
@@ -304,7 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E7D22A2D39EA4B00BED379 /* Assets.xcassets in Resources */,
 				F4E7D22F2D3A0AB300BED379 /* GoogleService-Info.plist in Resources */,
 				F43FC5BC2D6E992D00F0DD00 /* LatoBold.ttf in Resources */,
 			);
