@@ -16,6 +16,7 @@
 		504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC3101FED79650016851F /* LaunchScreen.storyboard */; };
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		F43DAAC027C57A7D00566D61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F43DAABF27C57A7C00566D61 /* GoogleService-Info.plist */; };
+		F43FC5BC2D6E992D00F0DD00 /* LatoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43FC5BB2D6E992D00F0DD00 /* LatoBold.ttf */; };
 		F4B35BDF2A4CA45F00A10990 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B35BDE2A4CA45F00A10990 /* AdServices.framework */; };
 		F4B453CA2BBDD2BD0015BC30 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B35BDE2A4CA45F00A10990 /* AdServices.framework */; };
 		F4B453CC2BBDD2C90015BC30 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4B453CB2BBDD2C90015BC30 /* AdSupport.framework */; };
@@ -71,6 +72,7 @@
 		E2AD3EC8EC6BE39DD59F3DDF /* Pods-moody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-moody/Pods-moody.debug.xcconfig"; sourceTree = "<group>"; };
 		F413097F28232F7E004118CE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F43DAABF27C57A7C00566D61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F43FC5BB2D6E992D00F0DD00 /* LatoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LatoBold.ttf; sourceTree = "<group>"; };
 		F4B35BDE2A4CA45F00A10990 /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
 		F4B453CB2BBDD2C90015BC30 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F4D9AB742D6D68C900330C04 /* StreakAccessoryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakAccessoryViews.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		F4E7D2292D39EA4B00BED379 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				F43FC5BB2D6E992D00F0DD00 /* LatoBold.ttf */,
 				F4D9AB762D6D68C900330C04 /* StreakWidget */,
 				F4E7D2252D39EA4B00BED379 /* Assets.xcassets */,
 				F4E7D2262D39EA4B00BED379 /* Info.plist */,
@@ -303,6 +306,7 @@
 			files = (
 				F4E7D22A2D39EA4B00BED379 /* Assets.xcassets in Resources */,
 				F4E7D22F2D3A0AB300BED379 /* GoogleService-Info.plist in Resources */,
+				F43FC5BC2D6E992D00F0DD00 /* LatoBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
