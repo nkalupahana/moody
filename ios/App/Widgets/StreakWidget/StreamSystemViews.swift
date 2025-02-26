@@ -5,7 +5,7 @@
 //  Created by Nisala on 2/24/25.
 //
 
-import SwiftUICore
+import SwiftUI
 import WidgetKit
 
 struct StreakSystemWidget: View {
