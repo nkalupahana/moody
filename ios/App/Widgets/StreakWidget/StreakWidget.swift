@@ -227,5 +227,6 @@ struct StreakWidget: Widget {
         .configurationDisplayName("Daily Streak")
         .description("This widget shows your journaling streak on baseline!")
         .supportedFamilies([.accessoryCircular, .accessoryInline, .systemSmall])
+        .contentMarginsDisabled()
     }
 }

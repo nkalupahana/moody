@@ -16,7 +16,7 @@ struct StreakCircularAccessory: View {
             AccessoryWidgetBackground()
             VStack {
                 if (entry.error) {
-                    Image(systemName: "pencil.tip.crop.circle.fill").imageScale(.medium)
+                    Image(systemName: "pencil.tip.crop.circle.fill").scaleEffect(2)
                 } else {
                     HStack(spacing: 0) {
                         if let mapping = dangerMapping[entry.danger] {
@@ -39,6 +39,7 @@ struct StreakCircularAccessory: View {
     Entry(date: Date(), streak: 25, danger: .journaledYesterday, error: false, entriesToday: 0)
     Entry(date: Date(), streak: 25, danger: .journaledTwoDaysAgo, error: false, entriesToday: 0)
     Entry(date: Date(), streak: 0, danger: .noRecovery, error: false, entriesToday: 0)
+    Entry(date: Date(), streak: 0, danger: .noRecovery, error: true, entriesToday: 0)
 }
 
 struct StreakInlineAccessory: View {
