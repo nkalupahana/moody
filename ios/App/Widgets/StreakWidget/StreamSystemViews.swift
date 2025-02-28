@@ -24,8 +24,10 @@ struct StreakSystemWidget: View {
                     
                     VStack(alignment: .leading, spacing: -3) {
                         if (entry.danger == .journaledTwoDaysAgo) {
-                            Text("Save your")
-                            Text("streak!")
+                            Group {
+                                Text("Save your")
+                                Text("streak!")
+                            }.font(Font.custom("Lato", size: 22))
                         } else if (entry.danger == .noRecovery) {
                             Group {
                                 Text("What's")
@@ -51,5 +53,6 @@ struct StreakSystemWidget: View {
     Entry(date: Date(), streak: 25, danger: .journaledYesterday, error: false, entriesToday: 0)
     Entry(date: Date(), streak: 0, danger: .noRecovery, error: false, entriesToday: 0)
     Entry(date: Date(), streak: 25, danger: .journaledTwoDaysAgo, error: false, entriesToday: 0)
+    Entry.errorEntry()
 }
 
