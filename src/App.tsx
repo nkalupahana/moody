@@ -49,6 +49,8 @@ import Onboarding from "./pages/Onboarding";
 import * as Sentry from "@sentry/react";
 import { DateTime } from "luxon";
 import WrappedSummary from "./pages/WrappedSummary";
+import { WidgetsBridgePlugin } from "capacitor-widgetsbridge-plugin"
+
 
 setupIonicReact({
     mode: Capacitor.getPlatform() === "android" ? "md" : "ios",
@@ -67,6 +69,17 @@ const App = () => {
 
     useEffect(() => {
         if (!user) return;
+
+        // Send refresh token to App Group UserDefaults so iOS
+        // widgets can call baseline API to get up-to-date streak info
+        if (Capacitor.getPlatform() === "ios") {
+            WidgetsBridgePlugin.setItem({
+                key: "refreshToken",
+                group: "group.app.getbaseline.baseline",
+                value: user.stsTokenManager.refreshToken
+            });
+        }
+
         Sentry.setUser({
             id: user.uid
         });
@@ -88,6 +101,13 @@ const App = () => {
             });
             signOutAndCleanUp();
         } else {
+            if (typeof keys === "object" && Capacitor.getPlatform() === "ios") {
+                WidgetsBridgePlugin.setItem({
+                    key: "keys",
+                    group: "group.app.getbaseline.baseline",
+                    value: JSON.stringify(keys)
+                });
+            }
             const onboarding = localStorage.getItem("onboarding");
             if (onboarding) {
                 history.replace(`/onboarding/${onboarding}`);
